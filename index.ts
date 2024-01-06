@@ -70,7 +70,7 @@ function handleCopyOrCut (params: VxeGlobalMenusHandles.MenuMethodParams, isCut?
         $table.triggerCopyCellAreaEvent($event)
       }
       // 兼容老版本
-      const { clipboard } = (VXETableInstance as any).globalStore || (VXETableInstance as any).config
+      const clipboard = (VXETableInstance as any).globalStore.clipboard || (VXETableInstance as any).config.clipboard
       text = clipboard.text
     } else {
       // 操作内置剪贴板
